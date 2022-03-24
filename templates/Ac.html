@@ -1,0 +1,332 @@
+{% load static %}
+ 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+{% comment %} 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	
+    <link rel="stylesheet" href="{% static 'foot/css/ionicons.min.css'%}">
+    <link rel="stylesheet" href="{% static 'foot/css/style.css'%}"> {% endcomment %}
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'foot/fonts/icomoon/style.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'foot/css/bootstrap.min.css'%}">
+    
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'foot/css/style.css'%}">
+
+    <title>Acces Maroc</title>
+  </head>
+  <body>
+
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+
+            <div class="site-logo">
+              <a href="index.html" class="text-black"><span class="text-primary"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/f_logo.PNG" alt="" width="180px" /></a>
+            </div>
+
+            <div class="col-12">
+              <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="#home-section" class="nav-link">Acceuil</a></li>
+                  <li><a href="#services-section" class="nav-link">Ai-je besoin d’une AEVM ?</a></li>
+                  <li><a href="#home-section" class="nav-link">Foire aux questions</a></li>
+                  
+                
+                  <li class="has-children">
+                    <a href="#about-section" class="nav-link">MA DEMANDE</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="#team-section" class="nav-link">DÉPOSER</a></li>
+                      <li><a href="#pricing-section" class="nav-link">SUIVRE</a></li>
+                      {% comment %} <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                      <li class="has-children">
+                        <a href="#">More Links</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Menu One</a></li>
+                          <li><a href="#">Menu Two</a></li>
+                          <li><a href="#">Menu Three</a></li>
+                        </ul>
+                      </li> {% endcomment %}
+                    </ul>
+                  </li> 
+
+                  {% comment %} <li><a href="#why-us-section" class="nav-link">DÉPOSER MA DEMANDE</a></li>
+                  
+                  <li><a href="#testimonials-section" class="nav-link">SUIVRE MA DEMANDE</a></li>
+                 {% endcomment %}
+                  <li><a href="#blog-section" class="nav-link"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/icon-connexion.png"/> Connexion</a></li>
+                  <li><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Maroc.PNG" alt="" width="80px" /></li>
+                </ul>
+                
+                
+              </nav>
+
+            </div>
+
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+        </div>
+
+      </header>
+
+
+
+
+      
+
+
+
+    <div class="hero" style="background-image: url('{% static 'images/body.jpg'%}');">
+      <br><br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <h5 class="text-white"><b>ETAPES DE DEMANDE D’UNE AUTORISATION ÉLECTRONIQUE DE VOYAGE AU MAROC –AEVM-</b></h5>
+          </div>
+        </div>
+      </div>
+      <div class="border d-flex align-items-center justify-content-center" style="height: 260px;width : 90%; margin-left: 60px; margin-right: 20px;background-color: white;">
+        {% comment %} <img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/icon-etape1.png">
+         {% endcomment %}
+        <div class="d-flex align-items-start"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Etap_1.PNG" alt="" width="220px" /></a></div>
+        
+        <div class="d-flex align-items-baseline"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/next.PNG" alt="" width="180px" /></div>
+        
+        <div class="d-flex align-items-end"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Etap_2.PNG" alt="" width="220px" /></a></div>
+        
+        <div class="d-flex align-items-baseline"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/next.PNG" alt="" width="180px" /></div>
+        
+        <div class="d-flex align-items-center"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Etap_3.PNG" alt="" width="220px" /></a></div>
+        
+        {% comment %}         
+        <div class="d-flex align-items-baseline"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/next-step.png"></div>
+        <div class="d-flex align-items-stretch"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/icon-etape1.png"></div>
+      {% endcomment %}
+      </div>
+      <div class="border d-flex align-items-center justify-content-center" style="height: 80px;width : 100%;background-color: white;">
+        <div class="col-center">
+          <h3 class="text-black">-------------- Infos utiles --------------</h3>
+        </div>
+      </div>
+      
+      <div class="border d-flex align-items-center justify-content-center" style="height: 260px;width : 100%;background-color: white;">
+        <div class="border d-flex align-items-center justify-content-center" style="height: 260px;width : 100%;background-color: white;">
+          {% comment %} <img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/icon-etape1.png">
+           {% endcomment %}
+          <div class="d-flex align-items-start"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/vid.PNG" alt="" width="350px" /></a></div>
+          
+         
+          <div class="d-flex align-items-end"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Ad.PNG" alt="" width="350px" /></a></div>
+          
+          
+          <div class="d-flex align-items-center"><a href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Q.PNG" alt="" width="350px" /></a></div>
+          
+         
+        </div>
+        
+      </div>
+
+    </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <footer class="text-center text-white" style="background-color: white;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Images -->
+        <section class="">
+          <div class="row">
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                {% comment %} <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/f_logo.PNG"
+                  class="w-100"
+                /> {% endcomment %}
+                {% comment %} <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  >À votre écoute</div>
+                </a> {% endcomment %}
+                <p class="text-primary">À votre écoute
+                </p>
+                <p><a href="#" class="text-muted">Foire aux questions</a></p>
+                <p><a href="#" class="text-muted">Conditions d'utilisations</a></p>
+
+                
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                {% comment %} <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/f_logo.PNG"
+                  class="w-100"
+                /> {% endcomment %}
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Maroc.PNG"
+                  class="w-250"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/f_logo.PNG"
+                  class="w-150"
+                /> 
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                {% comment %} <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Maroc.PNG"
+                  class="w-100"
+                /> {% endcomment %}
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                {% comment %} <img
+                  src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/Maroc.PNG"
+                  class="w-100"
+                /> {% endcomment %}
+                <p class="text-primary">Liens utiles</p>
+                <p><a href="#" class="text-muted">Consulat.ma</a></p>
+                <p><a href="#" class="text-muted">Diplomatie.ma</a></p>
+
+                {% comment %} <a href="#!" >
+                  Liens utiles</div>
+                </a> {% endcomment %}
+              
+              </div>
+            </div> 
+          </div>
+        </section>
+        <!-- Section: Images -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Copyright © MAECI Maroc 2018. Tous droits réservés
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.sticky.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+    {% comment %} <script src="{% static 'foot/js/jquery.min.js'%}"></script>
+    <script src="{% static 'foot/js/popper.js'%}"></script>
+    <script src="{% static 'foot/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'foot/js/main.js'%}"></script> {% endcomment %}
+
+    
+    <script src="{% static 'foot/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'foot/js/popper.min.js'%}"></script>
+    <script src="{% static 'foot/js/bootstrap.min.js'%}"></script>
+  </body>
+</html>

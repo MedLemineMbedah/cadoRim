@@ -1,0 +1,530 @@
+
+{% load static %}
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+        <style>
+            body,
+            * {
+                font-size: 15px;
+            }
+    
+            .form-wrapper {
+                width: 80%;
+                margin: auto;
+            }
+    
+            .form-header img {
+                margin: auto;
+                display: block;
+            }
+    
+            .form-header p {
+                margin: 0 0 8px;
+                text-align: center;
+                font-weight: 500;
+            }
+    
+            .form-header p.bold {
+                font-weight: 600;
+            }
+    
+            .form-ligne {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10px;
+            }
+    
+            .form-content input,
+            .form-content textarea {
+                width: 60%;
+            }
+    
+            .form-content label {
+                width: 20%;
+                display: block;
+                padding: 6px;
+            }
+    
+            .form-content label.error {
+                width: auto;
+                padding: 0;
+                border: 0;
+                color: red;
+            }
+    
+            .form-content label:last-of-type {
+                text-align: end;
+            }
+    
+            .required {
+                color: red;
+            }
+    
+            .default {
+                color: grey;
+            }
+    
+            h3 {
+                text-align: center;
+                text-decoration: underline;
+                font-weight: 400;
+                font-size: 14px;
+                margin: 0 0 10px;
+            }
+    
+            .form-content table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            .form-content th,
+            .form-content td {
+                border: 1px solid;
+                text-align: center;
+                font-size: 15px;
+            }
+    
+            .form-content th:not(:first-of-type) {
+                border: 1px solid;
+                text-align: center;
+                width: 90px;
+            }
+    
+            .signe {
+                width: 100%;
+                border: 1px solid;
+                margin-top: 10px;
+            }
+    
+            .signe p {
+                text-align: center;
+                margin: 6px;
+            }
+    
+            .signature-wrapper div {
+                display: inline-block;
+            }
+    
+            .signature {
+                width: 49%;
+            }
+    
+            .signature:last-of-type {
+                direction: rtl;
+            }
+    
+            .large {
+                width: 240px;
+            }
+            table tbody {
+                font-weight: normal;
+            }
+            /*.hide {*/
+                /*display: none;*/
+            /*}*/
+            #print {
+                padding: 10px;
+                margin: 10px auto;
+                color: white;
+                background: #cc4f00;
+                border: none;
+    
+            }
+    
+            .btn-wrapper {
+                text-align: center;
+            }
+    
+            @media print {
+    
+                body,
+                * {
+                    font-size: 11.5px;
+                }
+    
+                .form-wrapper {
+                    width: 80%;
+                    margin: auto;
+                }
+    
+                .form-header img {
+                    margin: auto;
+                    display: block;
+                    margin-top: -32px;
+                    height: 100px;
+                }
+    
+                .header-title {
+                    margin-top: -18px;
+                }
+    
+                .form-header p {
+                    margin: 0 0 2px;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 10px;
+                }
+    
+                .form-header p.bold {
+                    font-weight: 600;
+                }
+    
+                .form-ligne {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 1px;
+                }
+    
+                .form-content input {
+                    width: 60%;
+                }
+    
+                .form-content label {
+                    width: 24%;
+                    display: block;
+                    padding: 0 6px;
+                }
+    
+                .form-content label:last-of-type {
+                    text-align: end;
+                }
+    
+                h3 {
+                    text-align: center;
+                    text-decoration: underline;
+                    font-weight: 400;
+                    font-size: 11px;
+                    margin: 0 0 4px;
+                }
+    
+                .form-content table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+    
+                .form-content th,
+                .form-content td {
+                    border: 1px solid;
+                    text-align: center;
+                    font-size: 10px;
+                    padding: 0;
+                }
+    
+                .form-content th:not(:first-of-type) {
+                    border: 1px solid;
+                    text-align: center;
+                    width: 28px;
+                }
+    
+                .signe {
+                    width: 100%;
+                    border: 1px solid;
+                    margin-top: 2px;
+                }
+    
+                .signe p {
+                    text-align: center;
+                    margin: 0;
+                }
+    
+                .signature-wrapper div {
+                    display: inline-block;
+                }
+    
+                .signature {
+                    width: 49%;
+                }
+    
+                .signature:last-of-type {
+                    direction: rtl;
+                }
+    
+                #print {
+                    padding: 10px;
+                    margin: 10px auto;
+                    color: white;
+                    background: #cc4f00;
+                    border: none;
+    
+                }
+    
+                .btn-wrapper {
+                    text-align: center;
+                }
+    
+                #print {
+                    display: none;
+                }
+    
+                table {
+                    margin: 3px 0;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="padding-top: 0px;     background: #201a1a;">
+            <div class="container-fluid" >
+              <a class="navbar-brand js-scroll-trigger" href="#"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/logo.png" alt="" width="183px" /></a>
+              <!-- <a class="navbar-brand js-scroll-trigger" href="ar" ><img src="img/mauritania-flag-icon-32.png" alt=""  style="border: #fff 1px solid;"/></a> -->
+              <div> <a class="navbar-brand js-scroll-trigger" href="/formAr" style="display: block;"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/mauritania-flag-icon-32.png" alt="" style="border: #fff 1px solid;" /></a></div>
+              <div> <a class="navbar-brand js-scroll-trigger" href="/formFr" style="display: block;"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/france-flag-icon-32.png" alt="" style="border: #fff 1px solid;" /></a></div>
+              <div> <a class="navbar-brand js-scroll-trigger" href="/formEn" style="display: block;"><img src="https://raw.githubusercontent.com/MedLemineMbedah/logos/master/kng.png" alt=""  /></a></div>
+              
+        
+              
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                
+              </div>
+            </div>
+          </nav>
+        <br><br><br>
+        <div class="form-wrapper">
+            <form id="onda"><input type="hidden" name="nccharset" value="8911B951">
+                <div class="form-header"><div class="header-title">
+                        <p class="bold">FICHE SANITAIRE DU PASSAGER </p>
+                        <p class="bold">- CORONAVIRUS -</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <h3 class="underline">INFORMATIONS CONCERNANT LE VOL</h3>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Date d’arrivée :<span class="required">*</span></label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="1" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Numéro De Siège:</label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="2" class="form-carriere-text default" value="                                   Cette information à saisir après enregistrement">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Numéro De Vol :<span class="required">*</span> </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="3" class="form-carriere-text">
+                        <label for="" class="label-form"><span class="required"></label>
+                    </div>
+    
+    
+                    <h3 class="underline">INFORMATIONS SUR LE PASSAGER</h3>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Nom Prénom :<span class="required">*</span></label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="4" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Date de naissance :<span class="required">*</span></label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="5" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">N° de la CNIE ou CI : </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="6" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <div class="form-ligne">
+                        <label for="" class="label-form">N° passeport:<span class="required">*</span> </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="7" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne  print-marged">
+                        <label for="" class="label-form">Nationalité:<span class="required">*</span></label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="8" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Adresses au Maroc :</label>
+                        <textarea rows="3" id="adress" name="adress"></textarea>
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+    <!--                <div class="form-ligne">-->
+    <!--                    <label for="" class="label-form">Adresses au pays de résidence/ Addresses in country of residence :</label>-->
+    <!--                    <textarea rows="3" id="adress2" name="adress2"></textarea>-->
+    <!--                    <label for="" class="label-form">:العنوان في بلد الإقامة</label>-->
+    <!--                </div>-->
+    
+    <!--                <div class="form-ligne">-->
+    <!--                    <label for="" class="label-form">E-mail:<span class="required">*</span> </label>-->
+    <!--                    <input type="text" name="FORM_CRR_PRENOM" id="11" class="form-carriere-text">-->
+    <!--                    <label for="" class="label-form"><span class="required">*</span>:البريد الإلكتروني</label>-->
+    <!--                </div>-->
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">N° de téléphone hors Maroc : </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="tel" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">N° de téléphone au Maroc:</label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="tel1" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Pays de provenance  :<span class="required">*</span> </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="14" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Villes De Transit :</label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="city" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+    
+                    <div class="form-ligne">
+                        <label for="" class="label-form">Quels sont les pays que vous avez visité durant les derniers 10 jours ?
+                            </label>
+                        <input type="text" name="FORM_CRR_PRENOM" id="country" class="form-carriere-text">
+                        <label for="" class="label-form"></label>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>- Est ce que vous êtes vaccinés contre la COVID-19 ?</th>
+                            <th>Oui
+                                <input type="radio" name="resp3" value="Oui">
+                            </th>
+                            <th>Non
+                                <input type="radio" name="resp33" value="Non">
+                            </th>
+                        </tr>
+                        <tr class="hide">
+                            <td>
+                                - Si vous êtes vaccinés contre la COVID 19, quel type de vaccin vous avez reçu ?
+                                </td>
+    
+                            <td colspan="2"> <input id="vac" type="text" name="text3" value=""></td>
+                        </tr>
+                        <tr class="hide">
+                            <td>
+                               - Combien de dose vous avez reçu ?
+                               </td>
+    
+                            <td> 1<br><input type="radio" id="c1" name="resp4" value="1"></td>
+                            <td> 2<br><input type="radio" id="c2" name="resp4" value="2"></td>
+                        </tr>
+                        <tr class="hide">
+                            <td>- En quelle date avez-vous reçu la dernière dose de vaccin contre la COVID 19 ?
+                            
+                            <td colspan="2" class="large">
+                                 Date <br>
+                                <input id="date" type="date" name="resp5">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="signe">
+                        <p></p>
+                        <p>Je déclare que toutes les informations sont correctes.</p>
+                        <p></p>
+                        <div class="signature-wrapper">
+                            <div class="signature"><label>Signature :</label></div>
+                            <div class="signature"><label></label></div>
+                        </div>
+                        <br><br><hr>
+                        <p></p>
+                        <p>Merci pour votre compréhension</p>
+                        <p></p>
+                    </div>
+    
+                    <div class="signe">
+                        <p>Réservé à l’administration </p>
+                        <div class="form-ligne">
+                            <label for="" class="label-form">N° d’admission: </label>
+                        </div>
+                    </div>
+    
+                    <div class="btn-wrapper">
+                        <button id="print" style="cursor: pointer">Renseigner et Imprimer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            disable(true);
+            $("#1").attr("required", true);
+            $("#3").attr("required", true);
+            $("#4").attr("required", true);
+            $("#5").attr("required", true);
+            //$("#6").attr("required", true);
+            $("#7").attr("required", true);
+            $("#8").attr("required", true);
+    
+            // $("#adress").attr("required", true);
+            // $("#adress2").attr("required", true);
+            // $("#tel").attr("required", true);
+            // $("#tel1").attr("required", true);
+    
+            // $("#11").attr("required", true);
+    
+    
+            $("#14").attr("required", true);
+    
+            // $('#adress').keyup(function() {
+            //     if ($("#adress").val() != "") {
+            //         $("#adress2").attr("required", false);
+            //     }
+            // });
+            // $('#adress2').keyup(function() {
+            //     if ($("#adress2").val() != "") {
+            //         $("#adress").attr("required", false);
+            //     }
+            // });
+            // $('#tel').keyup(function() {
+            //     if ($("#tel").val() != "") {
+            //         $("#tel1").attr("required", false);
+            //     }
+            // });
+            // $('#tel1').keyup(function() {
+            //     if ($("#tel1").val() != "") {
+            //         $("#tel").attr("required", false);
+            //     }
+            // });
+            $('input[name="resp3"]').on('click change', function(e) {
+               // $('.hide').css("display", "table-row");
+                $('input[name="resp33"]').prop('checked', false);
+                disable(false);
+            });
+            $('input[name="resp33"]').on('click change', function(e) {
+               // $('.hide').css("display", "none");
+                $('input[name="resp3"]').prop('checked', false);
+                disable(true);
+            });
+            $('#onda').submit(function(e) {
+                e.preventDefault();
+                if ($(this)[0].checkValidity()) {
+                    $("#2").attr("value", "");
+                    window.print();
+                }
+            });
+            function disable(val) {
+                if (val) {
+                    $( "#vac" ).prop( "disabled", true );
+                    $( "#c1" ).prop( "disabled", true );
+                    $( "#c2").prop( "disabled", true );
+                    $( "#date").prop( "disabled", true );
+                } else {
+                    $( "#vac" ).prop( "disabled", false );
+                    $( "#c1" ).prop( "disabled", false );
+                    $( "#c2").prop( "disabled", false );
+                    $( "#date").prop( "disabled", false );
+                }
+            }
+        </script>
+    
+    <script type="text/javascript" src="/bnith__kHKX5aamLQmLGoWJG6CJ5EmnmFkYZTRZPYie3zZfO9OBv5pL-mttaS7p7BfgTCUG"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1648024105680;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+    
+    
+    </html>
