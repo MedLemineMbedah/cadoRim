@@ -12,3 +12,6 @@ def formEn_view(request):
 
 def home_view(request):
     return render(request,'Ac.html')
+
+def login_view(request):
+    return render(request,'login.html')
